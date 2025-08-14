@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     return view('welcome');
@@ -8,6 +10,15 @@ Route::get('/', function () {
 Route::get('/create', function () {
     return view('posts.create');
 });
+
+Route::post('/create_done', function () {
+    DB::table('posts')->insert([
+        'title' => request('title'),
+        'content' => request('content'),
+    ]);
+    return view('posts.create_done');
+});
+
 Route::get('/posts', function () {
     $posts = [
         ['id' => 1, 'title' => 'First Post', 'content' => 'This is the content of the first post.'],
@@ -17,9 +28,6 @@ Route::get('/posts', function () {
         ['id' => 5, 'title' => 'Fifth Post', 'content' => 'This is the content of the fifth post.'],
     ];
     return view('posts.index', ['posts' => $posts]);
-});
-Route::get('/create_done', function () {
-    return view('posts.create_done');
 });
 
 Route::get('/edit/{id}', function ($id) {

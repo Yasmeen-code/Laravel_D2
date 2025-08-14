@@ -11,7 +11,8 @@
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-2xl font-bold mb-6 text-gray-800">Create Post</h1>
 
-        <form action="/create_done" method="" class="space-y-4">
+        <form action="/create_done" method="post" class="space-y-4">
+            @csrf
             <div>
                 <label for="title" class="block text-gray-700 font-medium mb-1">Title</label>
                 <input type="text" name="title" id="title" required
