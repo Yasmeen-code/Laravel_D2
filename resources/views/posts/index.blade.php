@@ -21,12 +21,12 @@
     <tbody>
         @foreach ($posts as $post)
             <tr class="hover:bg-gray-50">
-                <td class="py-2 px-4 border-b">{{ $post['id'] }}</td>
-                <td class="py-2 px-4 border-b">{{ $post['title'] }}</td>
-                <td class="py-2 px-4 border-b">{{ $post['content'] }}</td>
+                <td class="py-2 px-4 border-b">{{ $post->id }}</td>
+                <td class="py-2 px-4 border-b">{{ $post->title }}</td>
+                <td class="py-2 px-4 border-b">{{ $post->content}}</td>
                 <td class="py-2 px-4 border-b">
-                    <a href="/edit/{{$post['id']}}" class="text-blue-500 hover:underline">Edit</a>
-                    <a href="/delete_done/{{$post['id']}}" class="text-red-500 hover:underline ml-2">Delete</a>
+                    <a href="/edit/{{$post->id}}" class="text-blue-500 hover:underline">Edit</a>
+                    <a href="/delete_done/{{$post->id}}" class="text-red-500 hover:underline ml-2">Delete</a>
                 </td>
             </tr>
         @endforeach
