@@ -29,6 +29,10 @@ Route::get('/edit/{id}', function ($id) {
     return view('posts.edit', ['post' => $post]);
 });
 Route::get('/edit_done/{id}', function ($id) {
+    DB::table('posts')->where('id', $id)->update([
+        'title' => request('title'),
+        'content' => request('content'),
+    ]);
     return view('posts.update', ['id' => $id]);
 });
 Route::get('/delete_done/{id}', function () {
