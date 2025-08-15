@@ -11,17 +11,17 @@
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-2xl font-bold mb-6 text-gray-800">Edit Post</h1>
 
-        <form action="/edit_done/{{ $post['id'] }}" method="" class="space-y-4">
+        <form action="/edit_done/{{ $post->id}}" method="" class="space-y-4">
             <div>
                 <label for="title" class="block text-gray-700 font-medium mb-1">Title</label>
-                <input type="text" name="title" id="title" value="{{ $post['title'] }}" required
+                <input type="text" name="title" id="title" value="{{ $post->title }}" required
                        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400">
             </div>
 
             <div>
                 <label for="content" class="block text-gray-700 font-medium mb-1">Content</label>
                 <textarea name="content" id="content" required rows="5"
-                          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400">{{ $post['content'] }}</textarea>
+                          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400">{{ $post->content }}</textarea>
             </div>
 
             <button type="submit"
