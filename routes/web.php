@@ -36,6 +36,8 @@ Route::get('/edit_done/{id}', function ($id) {
     return view('posts.update', ['id' => $id]);
 });
 Route::get('/delete_done/{id}', function () {
+    $id = request('id');
+    DB::table('posts')->where('id', $id)->delete();
     return view('posts.delete_done');
 });
 
